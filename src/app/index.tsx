@@ -1,11 +1,31 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { Dimensions, ScrollView, Text, View } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import Header from './components/header'
+
+const dimensions = Dimensions.get('window')
 
 function Home() {
+  const width = dimensions.width
+  const height = dimensions.height
+
   return (
-    <View className="flex-1 items-center justify-center">
-      <Text className="text-green-800 font-bold">Portfólio</Text>
-    </View>
+    <SafeAreaView
+      style={{
+        width,
+        height,
+        flex: 1,
+      }}
+    >
+      <View className="flex-[.1]">
+        <Header />
+      </View>
+      <ScrollView className="flex-[.9]">
+        <View>
+          <Text>Teste </Text>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   )
 }
 
